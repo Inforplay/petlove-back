@@ -177,7 +177,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\ander\\OneDrive\\Documentos\\1 - Reforço Dev\\petlove-back-1\\src\\generated\\prisma",
+      "value": "/home/raimundo-gomes/Documentos/CURSO_JavaScript_Gleydson_Teixera/projeto-petlove/petlove-back/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -186,12 +186,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\ander\\OneDrive\\Documentos\\1 - Reforço Dev\\petlove-back-1\\prisma\\schema.prisma",
+    "sourceFilePath": "/home/raimundo-gomes/Documentos/CURSO_JavaScript_Gleydson_Teixera/projeto-petlove/petlove-back/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -214,8 +214,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel concorrentes {\n  id        Int       @id @default(autoincrement())\n  nome      String    @db.VarChar(50)\n  tipo      String    @db.VarChar(20)\n  endereco  String    @db.VarChar(100)\n  foto      String?   @db.VarChar(255)\n  createdAt DateTime? @default(now())\n  updatedAt DateTime? @updatedAt\n  missoes   missoes[]\n}\n\nmodel missao_produto {\n  id          Int       @id @default(autoincrement())\n  missao_id   Int\n  produto_id  Int\n  preco       Float?\n  observacoes String?   @db.VarChar(255)\n  status      String    @db.VarChar(15)\n  createdAt   DateTime? @default(now())\n  updatedAt   DateTime? @updatedAt\n  missoes     missoes   @relation(fields: [missao_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: \"missao_produto_fk1\")\n  produtos    produtos  @relation(fields: [produto_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: \"missao_produto_fk2\")\n}\n\nmodel missoes {\n  id             Int              @id @default(autoincrement())\n  concorrente_id Int\n  status         String           @db.VarChar(15)\n  usuario_id     Int?\n  createdAt      DateTime?        @default(now())\n  updatedAt      DateTime?        @updatedAt\n  missao_produto missao_produto[]\n  concorrentes   concorrentes     @relation(fields: [concorrente_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: \"missoes_fk1\")\n  usuarios       usuarios?        @relation(fields: [usuario_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: \"missoes_fk3\")\n}\n\nmodel produtos {\n  id             Int              @id @default(autoincrement())\n  nome           String           @db.VarChar(255)\n  preco          Float\n  codigo         String?          @db.VarChar(30)\n  foto           String?          @db.VarChar(255)\n  createdAt      DateTime?        @default(now())\n  updatedAt      DateTime?        @updatedAt\n  missao_produto missao_produto[]\n}\n\nmodel usuarios {\n  id        Int       @id @default(autoincrement())\n  nome      String    @db.VarChar(50)\n  email     String    @db.VarChar(50)\n  senha     String    @db.VarChar(255)\n  foto      String?   @db.VarChar(255)\n  createdAt DateTime? @default(now())\n  updatedAt DateTime? @updatedAt\n  missoes   missoes[]\n}\n",
-  "inlineSchemaHash": "f03a4507cfd5e241d70c6e9e8e53103ad92380702b34a44eee68aa0227575b03",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel concorrentes {\n  id        Int       @id @default(autoincrement())\n  nome      String    @db.VarChar(50)\n  tipo      String    @db.VarChar(20)\n  endereco  String    @db.VarChar(100)\n  foto      String?   @db.VarChar(255)\n  createdAt DateTime? @default(now())\n  updatedAt DateTime? @updatedAt\n  missoes   missoes[]\n}\n\nmodel missao_produto {\n  id          Int       @id @default(autoincrement())\n  missao_id   Int\n  produto_id  Int\n  preco       Float?\n  observacoes String?   @db.VarChar(255)\n  status      String    @default(\"pendente\") @db.VarChar(15)\n  createdAt   DateTime? @default(now())\n  updatedAt   DateTime? @updatedAt\n  missoes     missoes   @relation(fields: [missao_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: \"missao_produto_fk1\")\n  produtos    produtos  @relation(fields: [produto_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: \"missao_produto_fk2\")\n}\n\nmodel missoes {\n  id             Int              @id @default(autoincrement())\n  concorrente_id Int\n  status         String           @default(\"pendente\") @db.VarChar(15)\n  usuario_id     Int?\n  createdAt      DateTime?        @default(now())\n  updatedAt      DateTime?        @updatedAt\n  missao_produto missao_produto[]\n  concorrentes   concorrentes     @relation(fields: [concorrente_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: \"missoes_fk1\")\n  usuarios       usuarios?        @relation(fields: [usuario_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: \"missoes_fk3\")\n}\n\nmodel produtos {\n  id             Int              @id @default(autoincrement())\n  nome           String           @db.VarChar(255)\n  preco          Float\n  codigo         String?          @db.VarChar(30)\n  foto           String?          @db.VarChar(255)\n  createdAt      DateTime?        @default(now())\n  updatedAt      DateTime?        @updatedAt\n  missao_produto missao_produto[]\n}\n\nmodel usuarios {\n  id        Int       @id @default(autoincrement())\n  nome      String    @db.VarChar(50)\n  email     String    @db.VarChar(50)\n  senha     String    @db.VarChar(255)\n  foto      String?   @db.VarChar(255)\n  createdAt DateTime? @default(now())\n  updatedAt DateTime? @updatedAt\n  missoes   missoes[]\n}\n",
+  "inlineSchemaHash": "cf7493d404d48a53f250245449f7e72cb1fe7319ab92ff4bc86ed918ee25abe0",
   "copyEngine": true
 }
 config.dirname = '/'

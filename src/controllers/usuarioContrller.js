@@ -11,7 +11,6 @@ async function buscar() {
         }
     }
 }
-
 async function buscarPorId(id) {
     try {
         const request = await prisma.usuarios.findUnique({
@@ -33,7 +32,6 @@ async function buscarPorId(id) {
         }
     }
 }
-
 async function criar(dados) {
 
     try {
@@ -60,7 +58,6 @@ async function criar(dados) {
         }
     }
 }
-
 async function editar(dados) {
 
     try {
@@ -88,7 +85,6 @@ async function editar(dados) {
         }
     }
 }
-
 async function deletar(id) {
 
     try {
@@ -113,8 +109,6 @@ async function deletar(id) {
     }
 }
 async function login(dados) {
-
-
     try {
         const usuario = await prisma.usuarios.findFirst({
             where: {
