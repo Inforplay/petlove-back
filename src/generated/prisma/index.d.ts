@@ -7648,7 +7648,7 @@ export namespace Prisma {
   export type missao_produtoCreateInput = {
     preco?: number | null
     observacoes?: string | null
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     missoes: missoesCreateNestedOneWithoutMissao_produtoInput
@@ -7661,7 +7661,7 @@ export namespace Prisma {
     produto_id: number
     preco?: number | null
     observacoes?: string | null
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
   }
@@ -7693,7 +7693,7 @@ export namespace Prisma {
     produto_id: number
     preco?: number | null
     observacoes?: string | null
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
   }
@@ -7718,7 +7718,7 @@ export namespace Prisma {
   }
 
   export type missoesCreateInput = {
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     missao_produto?: missao_produtoCreateNestedManyWithoutMissoesInput
@@ -7729,7 +7729,7 @@ export namespace Prisma {
   export type missoesUncheckedCreateInput = {
     id?: number
     concorrente_id: number
-    status: string
+    status?: string
     usuario_id?: number | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
@@ -7758,7 +7758,7 @@ export namespace Prisma {
   export type missoesCreateManyInput = {
     id?: number
     concorrente_id: number
-    status: string
+    status?: string
     usuario_id?: number | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
@@ -8833,7 +8833,7 @@ export namespace Prisma {
   }
 
   export type missoesCreateWithoutConcorrentesInput = {
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     missao_produto?: missao_produtoCreateNestedManyWithoutMissoesInput
@@ -8842,7 +8842,7 @@ export namespace Prisma {
 
   export type missoesUncheckedCreateWithoutConcorrentesInput = {
     id?: number
-    status: string
+    status?: string
     usuario_id?: number | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
@@ -8888,7 +8888,7 @@ export namespace Prisma {
   }
 
   export type missoesCreateWithoutMissao_produtoInput = {
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     concorrentes: concorrentesCreateNestedOneWithoutMissoesInput
@@ -8898,7 +8898,7 @@ export namespace Prisma {
   export type missoesUncheckedCreateWithoutMissao_produtoInput = {
     id?: number
     concorrente_id: number
-    status: string
+    status?: string
     usuario_id?: number | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
@@ -8994,7 +8994,7 @@ export namespace Prisma {
   export type missao_produtoCreateWithoutMissoesInput = {
     preco?: number | null
     observacoes?: string | null
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     produtos: produtosCreateNestedOneWithoutMissao_produtoInput
@@ -9005,7 +9005,7 @@ export namespace Prisma {
     produto_id: number
     preco?: number | null
     observacoes?: string | null
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
   }
@@ -9161,7 +9161,7 @@ export namespace Prisma {
   export type missao_produtoCreateWithoutProdutosInput = {
     preco?: number | null
     observacoes?: string | null
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     missoes: missoesCreateNestedOneWithoutMissao_produtoInput
@@ -9172,7 +9172,7 @@ export namespace Prisma {
     missao_id: number
     preco?: number | null
     observacoes?: string | null
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
   }
@@ -9204,7 +9204,7 @@ export namespace Prisma {
   }
 
   export type missoesCreateWithoutUsuariosInput = {
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     missao_produto?: missao_produtoCreateNestedManyWithoutMissoesInput
@@ -9214,7 +9214,7 @@ export namespace Prisma {
   export type missoesUncheckedCreateWithoutUsuariosInput = {
     id?: number
     concorrente_id: number
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
     missao_produto?: missao_produtoUncheckedCreateNestedManyWithoutMissoesInput
@@ -9248,7 +9248,7 @@ export namespace Prisma {
 
   export type missoesCreateManyConcorrentesInput = {
     id?: number
-    status: string
+    status?: string
     usuario_id?: number | null
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
@@ -9284,7 +9284,7 @@ export namespace Prisma {
     produto_id: number
     preco?: number | null
     observacoes?: string | null
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
   }
@@ -9323,7 +9323,7 @@ export namespace Prisma {
     missao_id: number
     preco?: number | null
     observacoes?: string | null
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
   }
@@ -9360,7 +9360,7 @@ export namespace Prisma {
   export type missoesCreateManyUsuariosInput = {
     id?: number
     concorrente_id: number
-    status: string
+    status?: string
     createdAt?: Date | string | null
     updatedAt?: Date | string | null
   }
